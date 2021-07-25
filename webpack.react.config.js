@@ -1,12 +1,18 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     mainFields: ["main", "module", "browser"],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, "tsconfig.json"),
+      }),
+    ],
   },
-  entry: "./src/elements/app.tsx",
+  entry: "./src/elements/App.tsx",
   target: "electron-renderer",
   devtool: "source-map",
   module: {

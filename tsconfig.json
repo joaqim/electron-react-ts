@@ -8,11 +8,18 @@
       "es2016",
       "es2017"
     ],
+    "types": ["reflect-metadata", "jest", "ecs", "joaqim/ecs", "@joaqim/ecs"],
     "allowJs": true,
     "jsx": "react",
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
+    "rootDir": "./",
+    "paths": {"*": ["src/*"]}
+
   }
 }
